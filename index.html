@@ -22,8 +22,8 @@
 
           <button class="header__btn" type="submit">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7.66671 13.9999C11.1645 13.9999 14 11.1644 14 7.66659C14 4.16878 11.1645 1.33325 7.66671 1.33325C4.1689 1.33325 1.33337 4.16878 1.33337 7.66659C1.33337 11.1644 4.1689 13.9999 7.66671 13.9999Z" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M14.6667 14.6666L13.3334 13.3333" stroke="#1C1C1C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7.66671 13.9999C11.1645 13.9999 14 11.1644 14 7.66659C14 4.16878 11.1645 1.33325 7.66671 1.33325C4.1689 1.33325 1.33337 4.16878 1.33337 7.66659C1.33337 11.1644 4.1689 13.9999 7.66671 13.9999Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14.6667 14.6666L13.3334 13.3333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
         </form>
@@ -116,17 +116,19 @@
               <ul class="goods__list">
                 <li class="goods__item">
                   <article class="goods__card card">
-                    <a class="card__link" href="/product">
+                    <a class="card__link card__link_img" href="/product">
                       <img class="card__img" src="/img/photo.jpg" alt="Кресло с подлокотниками">
                     </a>
 
-                    <h3 class="card__title">
-                      <a class="card__link" href="/product">
-                        Кресло с подлокотниками
-                      </a>
-                    </h3>
-                    
-                    <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                    <div class="card__info">
+                      <h3 class="card__title">
+                        <a class="card__link" href="/product">
+                          Кресло с подлокотниками
+                        </a>
+                      </h3>
+                      
+                      <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                    </div>
 
                     <button class="card__btn">
                       В корзину
@@ -142,17 +144,19 @@
 
                 <li class="goods__item">
                   <article class="goods__card card">
-                    <a class="card__link" href="/product">
+                    <a class="card__link card__link_img" href="/product">
                       <img class="card__img" src="/img/photo.jpg" alt="Кресло с подлокотниками">
                     </a>
 
-                    <h3 class="card__title">
-                      <a class="card__link" href="/product">
-                        Кресло с подлокотниками
-                      </a>
-                    </h3>
-                    
-                    <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                    <div class="card__info">
+                      <h3 class="card__title">
+                        <a class="card__link" href="/product">
+                          Кресло с подлокотниками
+                        </a>
+                      </h3>
+                      
+                      <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                    </div>
 
                     <button class="card__btn">
                       В корзину
@@ -168,17 +172,19 @@
 
                 <li class="goods__item">
                   <article class="goods__card card">
-                    <a class="card__link" href="/product">
+                    <a class="card__link card__link_img" href="/product">
                       <img class="card__img" src="/img/photo.jpg" alt="Кресло с подлокотниками">
                     </a>
 
-                    <h3 class="card__title">
-                      <a class="card__link" href="/product">
-                        Кресло с подлокотниками
-                      </a>
-                    </h3>
-                    
-                    <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                    <div class="card__info">
+                      <h3 class="card__title">
+                        <a class="card__link" href="/product">
+                          Кресло с подлокотниками
+                        </a>
+                      </h3>
+                      
+                      <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                    </div>
 
                     <button class="card__btn">
                       В корзину
@@ -194,17 +200,19 @@
 
                 <li class="goods__item">
                   <article class="goods__card card">
-                    <a class="card__link" href="/product">
+                    <a class="card__link card__link_img" href="/product">
                       <img class="card__img" src="/img/photo.jpg" alt="Кресло с подлокотниками">
                     </a>
 
-                    <h3 class="card__title">
-                      <a class="card__link" href="/product">
-                        Кресло с подлокотниками
-                      </a>
-                    </h3>
-                    
-                    <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                    <div class="card__info">
+                      <h3 class="card__title">
+                        <a class="card__link" href="/product">
+                          Кресло с подлокотниками
+                        </a>
+                      </h3>
+                      
+                      <p class="card__price">5&nbsp;000&nbsp;₽</p>
+                    </div>
 
                     <button class="card__btn">
                       В корзину
@@ -304,7 +312,7 @@
                 </div>
               </div>
 
-              <div class="product__info">
+              <div class="product__info" >
                 <p class="product__price">
                   5&nbsp;000&nbsp;₽
                 </p>
@@ -382,7 +390,7 @@
             </div>
           </section>
 
-          <section class="cart">
+          <section class="cart" hidden>
             <div class="container cart__container">
               <h2 class="cart__title">Корзина</h2>
 
@@ -466,7 +474,7 @@
                     Доставка 0 ₽
                   </p>
 
-                  <button class="cart__place-btn" type="submit" form="order">Оформить заказ</button>
+                  <button class="cart__place-btn" type="submit" id="order">Оформить заказ</button>
                 </div>
 
                 <form class="cart__form form-order" id="form" action="#" method="POST">
@@ -510,72 +518,76 @@
           </section>
 
           <section class="order">
-            <div class="order__info">
-              <p class="order__price">
-                20&nbsp;000&nbsp;₽
-              </p>
-
-              <p class="order__article">
-                №43435
-              </p>
-
-              <div class="order__characteristics">
-                <h3 class="order__characteristics-title">
-                  Данные доставки
-                </h3>
-
-                <table class="order__characteristics-table table">
-                  <tr class="table__row">
-                    <td class="table__field">
-                      Получатель
-                    </td>
-                    <td class="table__value">
-                      Иванов Петр Александрович
-                    </td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__field">
-                      Телефон
-                    </td>
-                    <td class="table__value">
-                      +7 (737) 346 23 00
-                    </td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__field">
-                      E-mail
-                    </td>
-                    <td class="table__value">
-                      Ivanov84@gmail.com
-                    </td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__field">
-                      Адрес доставки
-                    </td>
-                    <td class="table__value">
-                      Москва, ул. Ленина, 21, кв. 33
-                    </td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__field">
-                      Способ оплаты
-                    </td>
-                    <td class="table__value">
-                      Картой при получении
-                    </td>
-                  </tr>
-                  <tr class="table__row">
-                    <td class="table__field">
-                      Способ получения
-                    </td>
-                    <td class="table__value">
-                      Доставка
-                    </td>
-                  </tr>
-                </table>
-
-                <button class="order__btn" type="button">На главную</button>
+            <div class="container order__container">
+              <div class="order__info">
+                <h2 class="order__title">Заказ успешно размещен</h2>
+                
+                <p class="order__price">
+                  20&nbsp;000&nbsp;₽
+                </p>
+  
+                <p class="order__article">
+                  №43435
+                </p>
+  
+                <div class="order__characteristics">
+                  <h3 class="order__characteristics-title">
+                    Данные доставки
+                  </h3>
+  
+                  <table class="order__characteristics-table table">
+                    <tr class="table__row">
+                      <td class="table__field">
+                        Получатель
+                      </td>
+                      <td class="table__value">
+                        Иванов Петр Александрович
+                      </td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__field">
+                        Телефон
+                      </td>
+                      <td class="table__value">
+                        +7 (737) 346 23 00
+                      </td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__field">
+                        E-mail
+                      </td>
+                      <td class="table__value">
+                        Ivanov84@gmail.com
+                      </td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__field">
+                        Адрес доставки
+                      </td>
+                      <td class="table__value">
+                        Москва, ул. Ленина, 21, кв. 33
+                      </td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__field">
+                        Способ оплаты
+                      </td>
+                      <td class="table__value">
+                        Картой при получении
+                      </td>
+                    </tr>
+                    <tr class="table__row">
+                      <td class="table__field">
+                        Способ получения
+                      </td>
+                      <td class="table__value">
+                        Доставка
+                      </td>
+                    </tr>
+                  </table>
+  
+                  <button class="order__btn" type="button">На главную</button>
+                </div>
               </div>
             </div>
           </section>
@@ -590,7 +602,7 @@
         </a>
 
         <div class="footer__contacts contacts">
-          <a class="contacts__phone" href="tel:+7 (939) 839 12 97">
+          <a class="contacts__phone" href="tel:+7(939)8391297">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.48566 1.54445L5.59251 1.21074C5.95781 1.10078 6.35064 1.12746 6.69772 1.2858C7.0448 1.44415 7.32242 1.72334 7.4788 2.07131L8.2548 3.79703C8.38948 4.09641 8.42702 4.43046 8.36215 4.75227C8.29727 5.07408 8.13324 5.36749 7.89309 5.59131L6.71194 6.69188C6.55366 6.84217 6.67366 7.42788 7.25194 8.43017C7.8308 9.43303 8.27823 9.8296 8.48451 9.76788L10.0319 9.29474C10.3456 9.1988 10.6814 9.20341 10.9923 9.30794C11.3032 9.41246 11.5737 9.61166 11.7657 9.8776L12.8685 11.4062C13.0913 11.7148 13.1944 12.0939 13.1588 12.4728C13.1232 12.8518 12.9512 13.205 12.6748 13.4667L11.8222 14.2742C11.547 14.5348 11.2076 14.7178 10.8385 14.8044C10.4695 14.891 10.0841 14.8782 9.72166 14.7673C7.93537 14.2205 6.28109 12.5976 4.73651 9.9216C3.18851 7.2416 2.60394 4.98103 3.01137 3.13417C3.09355 2.76203 3.27348 2.41853 3.53263 2.1391C3.79177 1.85966 4.12075 1.65439 4.48566 1.54445Z" fill="white"/>
             </svg>

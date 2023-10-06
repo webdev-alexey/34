@@ -1,0 +1,81 @@
+.order {
+    &__container {
+        padding-top: 32px;
+    }
+
+    &__info {
+        display: grid;
+        justify-content: center;
+        grid-template-areas: 
+            "title"
+            "price"
+            "article"
+            "characteristics";
+        @media (min-width: 580px) {
+            grid-template-areas:
+                "title price"
+                "article"
+                "characteristics";
+        }
+
+        @media (min-width: 820px) {
+
+        }
+    }
+
+    &__title {
+        grid-area: title;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 8px; 
+        @media (min-width: 580px) {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__price {
+        grid-area: price;
+        font-size: 16px;
+        margin-bottom: 8px;
+        @media (min-width: 580px) {
+            font-size: 20px;
+            margin-bottom: 0px;
+        }
+    }
+
+    &__article {
+        grid-area: article;
+        display: inline;
+        font-size: 12px;
+        border-radius: 32px;
+        background-color: #EEEFF2;
+        padding: 4px 8px;
+        margin-bottom: 20px;
+    }
+
+    &__characteristics {
+        grid-area: characteristics;
+    }
+
+    &__characteristics-title {
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 12px;
+    }
+
+    &__characteristics-table {
+        margin-bottom: 24px;
+    }
+
+    &__btn {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        color: #fff;
+        border-radius: 32px;
+        border: 1px solid #780096;
+        background-color: #780096;
+        padding: 12px 24px; 
+    }
+}
