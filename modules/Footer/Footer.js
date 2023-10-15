@@ -75,7 +75,7 @@ export class Footer {
       </li>
       <li class="footer__developer-item">
         Developer:
-        <a href="#" class="footer__developer-link">Alexey</a>
+        <a class="footer__developer-link" href="#">Alexey</a>
       </li>
     </ul>
     <p class="footer__copyright">© Koff, 2023</p>
