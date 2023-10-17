@@ -14,12 +14,14 @@ import {Pagination} from './features/Pagination/Pagination';
 import {BreadCrumbs} from './features/BreadCrumbs/BreadCrumbs';
 import {ProductCard} from './modules/ProductCard/ProductCard';
 import {productSlider} from './features/ProductSlider/productSlider';
+import { Cart } from './modules/Cart/Cart';
 
 export const router = new Navigo('/', {linksSelector: "a[href^='/']"});
 
 const init = () => {
   const api = new ApiService();
   new Header().mount();
+  new Header().changeCount();
   new Main().mount();
   new Footer().mount();
 
@@ -48,7 +50,7 @@ const init = () => {
     .on(
       '/category',
       async ({params: {slug, page = 1}}) => {
-        new Catalog().mount(new Main().element);
+        (await new Catalog().mount(new Main().element)).setActiveLink(slug);
         const product = await api.getProducts({
           page: page,
           category: slug,
@@ -70,7 +72,7 @@ const init = () => {
       },
       {
         leave(done) {
-          new Catalog().unmount();
+          new Catalog().setActiveLink().unmount();
           new BreadCrumbs().unmount();
           new ProductList().unmount();
           done();
@@ -156,18 +158,28 @@ const init = () => {
       {
         leave(done) {
           new Catalog().unmount();
+          new BreadCrumbs().unmount();
           new ProductCard().unmount();
           done();
         },
       }
     )
-    .on('/cart', () => {
-      console.log('cart');
+    .on('/cart', async () => {
+      const cartItems = await api.getCart();
+      new Cart().mount(new Main().element, cartItems, 'Корзина пуста');
+    }, {
+      leave(done) {
+        new Cart().unmount();
+        new Header().changeCount();
+        done();
+      }
     })
     .on(
-      '/order',
-      () => {
-        new Order().mount(new Main().element);
+      '/order/:id',
+      async ({data: {id}}) => {
+        const order = await api.getOrder(id);
+        console.log(order[0]);
+        new Order().mount(new Main().element, order[0]);
         router.updatePageLinks();
       },
       {

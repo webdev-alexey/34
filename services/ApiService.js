@@ -48,9 +48,9 @@ export class ApiService {
 
   async getProducts(params = {}) {
     if (params.list) {
-      params.list = params.list.join(",");
+      params.list = params.list.join(',');
     }
-    return await this.getData("api/products", params);
+    return await this.getData('api/products', params);
   }
 
   async getProductCategories() {
@@ -63,5 +63,129 @@ export class ApiService {
     {
       return await this.getData(`api/products/${id}`);
     }
+  }
+
+  async postProductToCart(productId, quantity = 1) {
+    if (!this.accessKey) {
+      await this.getAccessKey();
+    }
+
+    try {
+      const response = await axios.post(
+        `${this.#apiUrl}api/cart/products`,
+        {
+          productId,
+          quantity,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${this.accessKey}`,
+          },
+        }
+      );
+
+      return response.data;
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        this.accessKey = null;
+        this.accessKeyService.delete();
+
+        return await this.getAccessKey();
+      }
+      console.error(error);
+    }
+  }
+
+  async updateQuantityProductToCart(productId, quantity) {
+    if (!this.accessKey) {
+      await this.getAccessKey();
+    }
+
+    try {
+      const response = await axios.put(
+        `${this.#apiUrl}api/cart/products`,
+        {
+          productId,
+          quantity,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${this.accessKey}`,
+          },
+        }
+      );
+
+      return response.data;
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        this.accessKey = null;
+        this.accessKeyService.delete();
+
+        return await this.getAccessKey();
+      }
+      console.error(error);
+    }
+  }
+
+  async getCart() {
+    return await this.getData('api/cart');
+  }
+
+  async deleteProductFromCart(id) {
+    if (!this.accessKey) {
+      await this.getAccessKey();
+    }
+
+    try {
+      const response = await axios.delete(
+        `${this.#apiUrl}api/cart/products/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${this.accessKey}`,
+          },
+        }
+      );
+
+      return response.data;
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        this.accessKey = null;
+        this.accessKeyService.delete();
+
+        return await this.getAccessKey();
+      }
+      console.error(error);
+    }
+  }
+
+  async postOrder(data) {
+    if (!this.accessKey) {
+      await this.getAccessKey();
+    }
+
+    try {
+      const response = await axios.post(
+        `${this.#apiUrl}api/orders`, data,
+        {
+          headers: {
+            Authorization: `Bearer ${this.accessKey}`,
+          },
+        }
+      );
+
+      return response.data;
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        this.accessKey = null;
+        this.accessKeyService.delete();
+
+        return await this.getAccessKey();
+      }
+      console.error(error);
+    }
+  }
+
+  async getOrder(id) {
+    return await this.getData(`api/orders/${id}`);
   }
 }
